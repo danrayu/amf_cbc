@@ -1,0 +1,60 @@
+{
+  "master_uid": "amf0090812",
+  "master_pwd": "3331336333373331646535366337323366656635353632303762393932363735",
+  "user_id": null,
+  "user_pwd": null,
+  "cus_id": "0090812",
+  "fname": "Alexei",
+  "lname": "Raiu",
+  "add_str": "Dr. Petar Skorchev, 25, at. 1",
+  "add_city": "Varna",
+  "add_pcode": "9000",
+  "add_state": "BG",
+  "phone_no": "0898371186",
+  "email": "me@localhost",
+  "submission_data": {
+    "date_birth": "1978-08-08",
+    "employment_status": "self",
+    "length_employment": "50",
+    "salary_frequency": "weekly",
+    "weekly_salary": "1000",
+    "biweekly_salary": "",
+    "calculator_data": {
+      "payments": 88,
+      "down_payment": 1200,
+      "bi_weekly": 212,
+      "monthly_term": 41,
+      "expected_income": "918.67",
+      "car": {
+        "nid": "104",
+        "title": "2013 Honda Civic SEDAN 4-DR",
+        "vin": "19XFB2F51DE070588",
+        "stock_nr": "B12932S",
+        "sales_price": 13390,
+        "weekly": 0,
+        "biweekly": 210,
+        "monthly": 0,
+        "down": 1200,
+        "payments": 88,
+        "interest": 22,
+        "use_app": 1
+      }
+    },
+    "image_face": 409,
+    "drivers_license_front": 410,
+    "drivers_license_back": 411,
+    "proof_of_income": 463,
+    "bank_statement": 464,
+    "other_docs": [
+      465
+    ],
+    "pickup_date": "2022-05-26T12:00:00-0400",
+    "pickup_options": "curbside"
+  },
+  "company_name": "SpaceX",
+  "occupation": "Rocket Designer",
+  "ssn": "111-222-333",
+  "housing_status": "Housed",
+  "period_residence": "12",
+  "monthly_salary": 4000
+}

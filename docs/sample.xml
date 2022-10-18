@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data_area>
+  <header_data>
+    <user_id></user_id>
+    <user_pwd>3331336333373331646535366337323366656635353632303762393932363735</user_pwd>
+    <cus_id>0090812</cus_id>
+    <action>PUSH</action>
+  </header_data>
+  <applicant_data>
+    <applicant type="primary">
+      <person_name>
+        <first_name>Alexei</first_name>
+        <last_name>Raiu</last_name>
+      </person_name>
+      <address_data>
+        <address type="current">
+          <line_one>Dr. Petar Skorchev, 25, at. 1</line_one>
+          <city>Varna</city>
+          <state_or_province>BG</state_or_province>
+          <postal_code>9000</postal_code>
+          <period_of_residence period="months">12</period_of_residence>
+          <housing_status>Housed</housing_status>
+        </address>
+      </address_data>
+      <contact_data>
+        <phone_no areacode="">0898371186</phone_no>
+        <email>me@localhost</email>
+      </contact_data>
+      <social>111-222-333</social>
+      <employment_data>
+        <employer type="current">
+          <company_name>SpaceX</company_name>
+          <address_data>
+          </address_data>
+          <contact_data>
+          </contact_data>
+          <period_of_employment>50</period_of_employment>
+          <occupation>Rocket Designer</occupation>
+          <salary period="monthly">4000</salary>
+        </employer>
+      </employment_data>
+    </applicant>
+  </applicant_data>
+</data_area>

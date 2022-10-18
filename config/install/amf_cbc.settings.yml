@@ -1,0 +1,20 @@
+langcode: en
+cus-id: 'removed'
+
+m-user-id: 'removed'
+m-user-pwd: 'removed'
+m-pwd-change-date: 'removed'
+
+user-id:
+user-pwd:
+pwd-change-date:
+user-ip:
+user-name:
+
+tester-id:
+tester-pwd:
+tester-ip:
+tester-name:
+
+last-transaction-id:
+api-uri: 'removed'

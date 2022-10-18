@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data_area>
+  <header_data>
+    <user_id>{{ data.master_uid }}</user_id>
+    <user_pwd>{{ data.master_pwd }}</user_pwd>
+    <cus_id>{{ data.cus_id }}</cus_id>
+    <action>ADD_USER</action>
+  </header_data>
+  <user_data>
+    <ip>{{ data.user_ip }}</ip>
+    <name>{{ data.user_name }}</name>
+    <uid>{{ data.uid }}</uid>
+    <user_pwd>{{ data.user_pwd }}</user_pwd>
+    {% if data.user_email %}
+      <email>{{ data.user_email }}</email>
+    {% endif %}
+  </user_data>
+</data_area>

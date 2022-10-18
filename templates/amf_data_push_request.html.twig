@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data_area>
+	<header_data>
+    {% if data.app_id %}
+		<app_id>{{ data.app_id }}</app_id>
+    {% endif %}
+		<user_id>{{ data.user_id }}</user_id>
+		<user_pwd>{{ data.user_pwd }}</user_pwd>
+		<cus_id>{{ data.cus_id }}</cus_id>
+    {% if data.deal_status %}
+      <deal_status>{{ data.deal_status }}</deal_status>
+    {% endif %}
+		<action>PUSH</action>
+	</header_data>
+	<applicant_data>
+		<applicant type="primary">
+			<person_name>
+				<first_name>{{ data.fname }}</first_name>
+        {% if data.mname %}
+          <middle_name>{{ data.mname }}</middle_name>
+        {% endif %}
+				<last_name>{{ data.lname }}</last_name>
+			</person_name>
+			<address_data>
+        <address type="current">
+          <line_one>{{ data.add_str }}</line_one>
+          <city>{{ data.add_city }}</city>
+          <state_or_province>{{ data.add_state }}</state_or_province>
+          <postal_code>{{ data.add_pcode }}</postal_code>
+          {% if data.period_residence %}
+          <period_of_residence period="months">{{ data.period_residence }}</period_of_residence>
+          {% endif %}
+          {% if data.housing_status %}
+            <housing_status>{{ data.housing_status }}</housing_status>
+          {% endif %}
+        </address>
+	    </address_data>
+      <contact_data>
+        {% if data.phone_no %}
+          <phone_no areacode="{{ data.areacode }}">{{ data.phone_no }}</phone_no>
+        {% endif %}
+        {% if data.email %}
+          <email>{{ data.email }}</email>
+        {% endif %}
+      </contact_data>
+      {% if data.date_birth %}
+        <birthdate>{{ data.date_birth }}</birthdate>
+      {% endif %}
+	    <social>{{ data.ssn }}</social>
+      <employment_data>
+        <employer type="current">
+          {% if data.company_name %}
+            <company_name>{{ data.company_name }}</company_name>
+          {% endif %}
+          {% if data.emp_status %}
+            <employment_status>{{ data.emp_status }}</employment_status>
+          {% endif %}
+          <address_data>
+            {% if data.emp_add_str %}
+              <line_one>{{ data.emp_add_str }}</line_one>
+            {% endif %}
+            {% if data.emp_add_city %}
+              <city>{{ data.emp_add_city }}</city>
+            {% endif %}
+            {% if data.emp_add_state %}
+              <state_or_province>{{ data.emp_add_state }}</state_or_province>
+            {% endif %}
+            {% if data.emp_add_pcode %}
+              <postal_code>{{ data.emp_add_pcode }}</postal_code>
+            {% endif %}
+          </address_data>
+          <contact_data>
+            {% if data.emp_phone %}
+              <phone_no areacode="{{ data.emp_areacode }}">{{ data.emp_phone }}</phone_no>
+            {% endif %}
+          </contact_data>
+          {% if data.submission_data.length_employment %}
+            <period_of_employment>{{ data.submission_data.length_employment }}</period_of_employment>
+          {% endif %}
+          {% if data.occupation %}
+            <occupation>{{ data.occupation }}</occupation>
+          {% endif %}
+          {% if data.monthly_salary %}
+            <salary period="monthly">{{ data.monthly_salary }}</salary>
+          {% endif %}
+        </employer>
+      </employment_data>
+		</applicant>
+	</applicant_data>
+</data_area>
+

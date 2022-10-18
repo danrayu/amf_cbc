@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data_area>
+  <header_data>
+    {% if data.master_change_pwd %}
+      <user_id>{{ data.master_uid }}</user_id>
+      <user_pwd>{{ data.master_pwd }}</user_pwd>
+    {% else %}
+      <user_id>{{ data.user_id }}</user_id>
+      <user_pwd>{{ data.user_pwd }}</user_pwd>
+    {% endif %}
+    <new_pwd>{{ data.new_pwd }}</new_pwd>
+    <cus_id>{{ data.cus_id }}</cus_id>
+    <action>PWD_CHANGE</action>
+  </header_data>
+</data_area>
+
+

@@ -1,0 +1,5 @@
+name: AMF CBC
+type: module
+description: This module sends and recieves data from CBC API and replaces credit iframe form with a custom one.
+package: Custom
+core_version_requirement: ^9 || ^10

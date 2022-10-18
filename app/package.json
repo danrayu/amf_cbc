@@ -1,0 +1,30 @@
+{
+  "name": "vue_starter_webpack",
+  "description": "A starter kit for Vue with Drupal module",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development webpack --mode development  --open --hot",
+    "build": "cross-env NODE_ENV=production webpack --progress --mode production --hide-modules"
+  },
+  "dependencies": {
+    "vue": "^2.6.10"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-preset-latest": "^6.24.1",
+    "cross-env": "^6.0.3",
+    "css-loader": "^3.2.1",
+    "deepmerge": "^4.2.2",
+    "fibers": "^4.0.2",
+    "file-loader": "^5.0.2",
+    "sass": "^1.3.2",
+    "sass-loader": "^8.0.0",
+    "vue-loader": "^15.7.2",
+    "vue-template-compiler": "^2.6.10",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.9.0"
+  }
+}

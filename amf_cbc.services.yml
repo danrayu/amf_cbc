@@ -1,0 +1,8 @@
+services:
+  amf_cbc:
+    class: Drupal\amf_cbc\CBCHelper
+    arguments: ['@logger.channel.default','@butils']
+  amf_cbc.commands:
+    class: \Drupal\amf_cbc\Commands\CBCCommands
+    tags:
+      - { name: drush.command }

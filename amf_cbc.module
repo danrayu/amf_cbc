@@ -1,0 +1,84 @@
+<?php
+
+/**
+ * @file
+ * AMF CBC module.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_theme().
+ */
+function amf_cbc_theme($existing, $type, $theme, $path) {
+  return [
+    'amf_add_user_request' => [
+      'variables' => [
+        'data' => [],
+      ],
+      'template' => 'amf_add_user_request',
+    ],
+    'amf_data_push_request' => [
+      'variables' => [
+        'data' => [],
+      ],
+      'template' => 'amf_data_push_request',
+    ],
+    'amf_msr_pwd_change_request' => [
+      'variables' => [
+        'data' => [],
+      ],
+      'template' => 'amf_msr_pwd_change_request',
+    ],
+    'amf_pull_credit_request' => [
+      'variables' => [
+        'data' => [],
+      ],
+      'template' => 'amf_pull_credit_request',
+    ],
+    'amf_credit_recall_request' => [
+      'variables' => [
+        'data' => [],
+      ],
+      'template' => 'amf_credit_recall_request',
+    ],
+  ];
+}
+
+/**
+ * Implements hook_form_ID_alter().
+ */
+function amf_cbc_form_webform_submission_financial_app_add_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+
+  /** @var \Drupal\webform\WebformSubmissionForm $form_object */
+  $form_object = $form_state->getFormObject();
+  /** @var \Drupal\webform\WebformSubmissionInterface $webform_submission */
+  $webform_submission = $form_object->getEntity();
+
+  // Apply the app data.
+  if (!empty($form['elements']['get_credit']['integrated_app'])) {
+    $form['#attached']['library'][] = 'amf_cbc/app';
+    $form['#attached']['drupalSettings'] = [
+      'amf_cbc' => [
+        'token' => \Drupal::csrfToken()->get('amf_cbc/xhr'),
+        'submission_data' => $webform_submission->getData(),
+      ],
+    ];
+  }
+}
+
+/**
+ * Implements hook_cron().
+ */
+function amf_cbc_cron() {
+  $config = \Drupal::config('amf_cbc.settings');
+  $cbc_app = \Drupal::service('amf_cbc');
+
+  // If a new month has come, run pwd updates.
+  if (date('Y-m', $config->get('m-pwd-change-date')) != date('Y-m', time())) {
+    $cbc_app->taskPwdUpdate($cbc_app::UPDATE_MASTER);
+  }
+  if (date('Y-m', $config->get('pwd-change-date')) != date('Y-m', time())) {
+    $cbc_app->taskPwdUpdate($cbc_app::UPDATE_REGULAR);
+  }
+}

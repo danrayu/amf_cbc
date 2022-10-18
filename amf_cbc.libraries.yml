@@ -1,0 +1,10 @@
+app:
+  js:
+    app/dist/amf-cbc-app.js: { minified: true }
+  css:
+    component:
+      app/dist/default.css: {}
+      app/css/vue_starter.css: {}
+  dependencies:
+    - core/jquery
+    - core/drupalSettings

@@ -1,0 +1,8 @@
+amf_cbc.xhr:
+  path: 'amf_cbc/xhr'
+  defaults:
+    _controller: 'Drupal\amf_cbc\Controller\XHRController::xhr'
+    _title: 'Ajax CBC Form Callback'
+  requirements:
+    _permission: 'access content'
+    _csrf_token: 'TRUE'
